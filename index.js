@@ -4,6 +4,7 @@ const app = express();
 import userRoute from "./routes/user.js";
 import settingRoute from "./routes/setting.js";
 import brandedFood from "./routes/brandedFood.js"
+import barcode from "./routes/barcode.js";
 
 import "dotenv/config";
 const { PORT } = process.env;
@@ -19,8 +20,11 @@ app.use("/api/users", userRoute);
 //setting route for setting 
 app.use("/api/setting", settingRoute);
 
+//setting route for food ingredients
 app.use("/api/brandedfood",brandedFood);
 
+//setting route for WEB API (fetching picture)
+app.use("/api/barcode",barcode);
 
 app.listen(PORT,()=>{
 console.log("confirm this server is working well", PORT);
