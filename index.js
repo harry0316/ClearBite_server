@@ -6,6 +6,7 @@ import settingRoute from "./routes/setting.js";
 import brandedFood from "./routes/brandedFood.js"
 import barcode from "./routes/barcode.js";
 import Ingredients from "./routes/Ingredients.js"
+import favorite from "./routes/favorite.js"
 
 import "dotenv/config";
 const { PORT } = process.env;
@@ -29,6 +30,9 @@ app.use("/api/barcode",barcode);
 
 //setting route for ingredients
 app.use("/api/ingredients",Ingredients)
+
+
+app.use("/api/favorite",favorite)
 
 app.listen(PORT,()=>{
 console.log("confirm this server is working well", PORT);
