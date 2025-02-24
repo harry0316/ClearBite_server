@@ -13,7 +13,7 @@ const getImg = async(req, res) =>{
     );
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch data" },error);
+  return res.status(404).json({ error: "Failed to fetch data" });
   }
 }
 

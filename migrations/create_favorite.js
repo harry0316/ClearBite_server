@@ -9,6 +9,7 @@
     table.increments('id').primary();
     table.integer('userid').notNullable();
     table.string('gtin_upc').notNullable();
+    table.string('description').notNullable();
     table.timestamp('created_at').defaultTo(knex.fn.now());
   });
 };

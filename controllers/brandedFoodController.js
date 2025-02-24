@@ -9,7 +9,7 @@ try{
     
     //confirm if query exist
     if(!query){
-    return res.status(400).send("No query provided for search");
+     return res.status(400).json({ error: "No query provided for search" });
 
     }
 
@@ -18,7 +18,7 @@ try{
     .orWhere('description', 'like', `%${query}%`);
 
     if(targetFood.length === 0){
-    return res.status(200).send("No matching food found");
+        return res.status(200).json({ message: "No matching food found" });
     }
 
     res.status(200).json(targetFood);
@@ -26,7 +26,7 @@ try{
 }catch(e){
 
 console.error(e);
-res.status(404).send("can not access to the food database",e);
+res.status(400).json({ error: "Cannot access the food database" });
 
 }
 }

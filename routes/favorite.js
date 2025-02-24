@@ -1,8 +1,9 @@
 import express from "express";
 const router = express.Router();
-import { addFavorite } from "../controllers/favoriteController.js";
+import { addFavorite,getAllFav } from "../controllers/favoriteController.js";
 
-router.post("/",addFavorite);
+router.get("/",getAllFav)
+.post("/",addFavorite);
 
 
 
